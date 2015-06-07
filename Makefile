@@ -10,6 +10,6 @@ dockerStart:
 
 ## to be run inside container
 test:
-	npm run test
+	mocha test/index
 
 .PHONY: test
