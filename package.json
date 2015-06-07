@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "A+ compliant promises implementation",
   "main": "index.js",
+  "scripts": {
+    "test": "mocha test/index.js"
+  },
   "keywords": [
     "promises"
   ],
