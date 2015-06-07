@@ -1,0 +1,18 @@
+{
+  "name": "promm",
+  "version": "0.0.1",
+  "description": "A+ compliant promises implementation",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/index.js"
+  },
+  "keywords": [
+    "promises"
+  ],
+  "author": "rnsloan",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "~2.2.5",
+    "promises-aplus-tests": "~2.1.0"
+  }
+}
