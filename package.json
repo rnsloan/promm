@@ -13,6 +13,6 @@
   "license": "ISC",
   "devDependencies": {
     "mocha": "*",
-    "promises-aplus-tests": "*"
+    "promises-aplus-tests": "2.1.0"
   }
 }

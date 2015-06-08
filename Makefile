@@ -1,4 +1,5 @@
 ## docker commands to be run in host OS
+
 dockerBuild:
 	docker build -t rnsloan/promm .
 
@@ -9,6 +10,11 @@ dockerStart:
 	docker start -ai promm
 
 ## to be run inside container
+
+## watch -n 0.5 make run
+run:
+	iojs index.js
+
 test:
 	npm test
 
