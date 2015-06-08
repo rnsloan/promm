@@ -3,9 +3,19 @@ Promm =  function(fn) {
   var value;
   var deferred = null;
 
+  function isAPromise(thing) {
+    if (thing
+        && (typeof thing === 'function' || typeof thing === 'object')
+        && typeof thing.then === 'function') {
+      return true
+    } else {
+      return false
+    }
+  }
+
   function resolve(newValue) {
     try {
-      if(newValue && typeof newValue.then === 'function') {
+      if( isAPromise(newValue) ) {
         newValue.then(resolve, reject);
         return;
       }
