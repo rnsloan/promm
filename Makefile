@@ -1,10 +1,7 @@
 ## docker commands to be run in host OS
 
-dockerBuild:
-	docker build -t rnsloan/promm .
-
 dockerRun:
-	docker run -it --name promm -v ${PWD}/:/usr/src/promm -w /usr/src/promm rnsloan/promm /bin/bash
+	docker run -it --name promm -v ${PWD}/:/usr/src/promm -w /usr/src/promm iojs /bin/bash
 
 dockerStart:
 	docker start -ai promm
