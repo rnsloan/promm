@@ -1,7 +1,13 @@
-function Promise() {};
+function Promm() {
+  var myState = {
+    PENDING: 'pending',
+    FULFILLED: 'fulfilled',
+    REJECTED: 'Rejected'
+  }
+};
 
-Promise.resolve = function() {};
-Promise.reject = function() {};
-Promise.then = function() {};
+Promm.resolve = function() {};
+Promm.reject = function() {};
+Promm.then = function() {};
 
-module.exports = Promise
+module.exports = Promm
