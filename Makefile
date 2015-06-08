@@ -8,8 +8,6 @@ dockerStart:
 
 ## to be run inside container
 
-## watch -n 0.5 make run
-
 runSandbox:
 	iojs sandbox.js
 
