@@ -1,22 +1,16 @@
 var Promise = require('../index')
 
-function defer() {
-  var deferred = {};
-
-  deferred.promise = new Promise(function(resolve, reject) {
-    deferred.resolve = resolve;
-    deferred.reject = reject;
+exports.deferred = function () {
+  var resolve, reject;
+  var promise = new Promise(function (onResolve, onReject) {
+    resolve = onResolve;
+    reject = onReject;
   });
-
-  return deferred;
-}
-var resolve = Promise.resolve;
-var reject = Promise.reject;
-
-
-module.exports = {
-  resolved: function(a) { return Promise.resolve(a); },
-  rejected: function(a) { return Promise.reject(a);  },
-  deferred: defer,
-  Promise: Promise
+  return {
+    promise: promise,
+    resolve: resolve,
+    reject: reject
+  };
 };
+exports.resolved = Promise.resolve;
+exports.rejected = Promise.reject;
