@@ -9,13 +9,16 @@ dockerStart:
 ## to be run inside container
 
 ## watch -n 0.5 make run
-watch:
-	watch -n 0.5 make run
 
-run:
-	iojs index.js
+runSandbox:
+	iojs sandbox.js
+
+watch:
+	watch -n 0.5 make runSandbox
 
 test:
 	npm test
 
 .PHONY: test
+
+
