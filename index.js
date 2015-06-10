@@ -1,7 +1,7 @@
 Promm =  function(fn) {
   var state = 'pending';
   var value;
-  var deferred = null;
+  var deferred = [];
 
   function isAPromise(thing) {
     if (thing
@@ -22,8 +22,8 @@ Promm =  function(fn) {
       state = 'resolved';
       value = newValue;
 
-      if(deferred) {
-        handle(deferred);
+      if( deferred.length != 0 ) {
+        handle(deferred.shift());
       }
     } catch(e) {
       reject(e);
@@ -34,20 +34,19 @@ Promm =  function(fn) {
     state = 'rejected';
     value = reason;
 
-    if(deferred) {
-      handle(deferred);
+    if( deferred.length != 0 ) {
+      handle(deferred.shift());
     }
   }
 
   function handle(handler) {
     if(state === 'pending') {
-      deferred = handler;
+      deferred.push(handler);
       return;
     }
 
     setTimeout(function () {
       var handlerCallback;
-
       if(state === 'resolved') {
         handlerCallback = handler.onResolved;
       } else {
